@@ -22,7 +22,7 @@ with st.sidebar:
     st.write("📧 **Email**:")
     st.code("xuweidong@ksztone.com", language="text")  # 使用代码框方便复制
 
-     st.write("📧 **微信**:")
+    st.write("📧 **微信**:")
     st.code("wayneshun", language="text")  # 使用代码框方便复制
 
     st.write("📍 **职业**:")
