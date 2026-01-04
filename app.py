@@ -1,42 +1,80 @@
 import streamlit as st
 
-# 1. 设置页面标题
-st.title("👋 许卫栋的个人主页")
-st.write("这是我独立开发的第一个个人页面。")
+# 1. 页面基础设置 (设置网页标签页的名字和图标)
+st.set_page_config(
+    page_title="许卫栋的个人主页",
+    page_icon="💼",
+    layout="wide"  # 使用宽屏模式，让页面更大气
+)
 
-# --- 核心布局部分 ---
+# --- 侧边栏：个人概况 ---
+with st.sidebar:
+    # [图片区域]
+    # 这里我放了一个灰色的占位图，请把引号里的链接换成你的真实照片链接
+    # 如果是本地照片，就把链接换成文件名，如 "my_photo.jpg"
+    photo_url = "https://media.licdn.com/dms/image/v2/D5603AQEVwtgpSenwsA/profile-displayphoto-shrink_400_400/B56ZOuwUZJGcAg-/0/1733803725997?e=1769040000&v=beta&t=XwLvE0byrcUdaCfy5Cdhb3kQza9zTvwrgaWet863w0A"
+    st.image(photo_url, caption="许卫栋", use_container_width=True)
 
-# 2. 创建两列布局
-# [1, 2] 的意思是：左边占 1 份宽度，右边占 2 份宽度
-# 这样右边的文字区域会比左边的图片区域宽一些，看起来更协调
-col_left, col_right = st.columns([1, 2])
+    st.markdown("---")  # 分割线
 
-# 3. 在左边一列放头像
-with col_left:
-    # 这里用了一个网络头像生成器的链接，你可以换成任何图片链接
-    avatar_url = "https://api.dicebear.com/9.x/avataaars/svg?seed=Felix"
-    # 把 column 换成 container
-    st.image(avatar_url, caption="我是一个努力学习的零基础工程师", use_container_width=True)
-# 4. 在右边一列放技能列表
-with col_right:
-    st.subheader("🛠️ 我的技能栈")
+    # [联系方式]
+    st.subheader("📬 联系方式")
+    st.write("📧 **Email**:")
+    st.code("xuweidong@ksztone.com", language="text")  # 使用代码框方便复制
 
-    # 使用 markdown 语法写列表
-    st.write("""
-    作为一个正在努力学习的初学者，我已经掌握了：
+    st.write("📍 **职业**:")
+    st.write("CONSTRUCT 战略负责人")
 
-    - 🐍 **Python 基础**: 变量、循环、函数
-    - 🌐 **Streamlit**: 快速搭建网页
-    - 📊 **数据思维**: 正在学习如何处理数据
-    - 🇬🇧 **英语能力**: 能看懂基本的报错信息
-    """)
+# --- 主页面：详细经历 ---
 
-    # 加一个进度条装饰一下，假装在展示熟练度
-    st.write("Python 学习进度：")
-    st.progress(30)  # 30% 的进度
+# 标题区域
+st.title("👋 你好，我是许卫栋")
+st.write("在CONSTRUCT负责战略和新业务探索。")
 
-# --- 底部互动 ---
-st.divider()  # 画一条分割线
-if st.button("给我的主页点个赞 👍"):
-    st.toast("谢谢你的鼓励！🎉")  # 弹出一条小消息
+st.divider()  # 画一条长分割线
+
+# 2. 教育背景板块
+st.header("🎓 教育背景")
+
+# 使用列布局来让时间显示在右边，学校显示在左边
+col1, col2 = st.columns([3, 1])
+with col1:
+    st.subheader("中南财经政法大学")
+    st.write("本科 | 劳动与社会保障")  # 如果你想加专业可以改这里
+with col2:
+    st.write("📅 2008 - 2012")
+
+st.divider()
+
+# 3. 工作经历板块
+st.header("💼 主要工作经历")
+
+# 这里我们用“字典”结构：左边是公司，冒号后面是具体经历
+# 你可以在引号里随意修改文字
+experiences = {
+    "九合创投 (Unity Ventures)": "在此期间主要负责社交和娱乐领域的创业公司，同时也对消费领域感兴趣，负责早期项目的筛选与评估。投资了Uki 、Scooper等公司，自己个人投资了Litmatch 、斑码编程等公司",
+    "璀璨资本 (Bright Capital)": "专注于早期投资，深入研究了消费互联网领域的商业模式，投资了口袋狼人杀等项目。",
+    "盛大 (Shanda)": "参与了VR领域的投资，负责了数十家公司的投后管理工作。",
+    "腾讯 (Tencent)": "在职期间积累了深厚的产品思维与用户运营经验。",
+    "新浪 (Sina)": "早期互联网从业经历，建立了对网络媒体和内容社区的深刻认知。"
+}
+
+# 遍历字典，company 是公司名，desc 是描述
+for company, desc in experiences.items():
+    with st.container():
+        # 这里的 f"{company}" 是把公司名字填进去
+        st.subheader(f"🏢 {company}")
+
+        # 显示对应的工作描述
+        st.write(desc)
+
+        # 加个分割线，让排版更清晰
+        st.markdown("---")
+
+
+    # 4. 底部互动
+st.info("如果您对战略合作或投资机会感兴趣，欢迎通过邮件与我联系。")
+
+
+
 
