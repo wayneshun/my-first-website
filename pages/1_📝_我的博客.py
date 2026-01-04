@@ -25,6 +25,23 @@ posts = [
         """
     },
     {
+        "title": "第三篇：我喜欢用的AI产品",
+        "date": "2026-01-15",
+        "summary": "回顾最近的试用体验...",
+        "content": """
+        ### 职业选择的故事
+        最近最喜欢用的几个 AI 产品和场景：
+- 看 Youtube 可以用 Granola take notes, 只要几个 key words 就能记全整个视频
+- 播客用 Podwise 导出 transcripts，然后打印下来阅读纸质书，Podwise 的排版和字体我很喜欢、很优美，takeaway 抓得也准，转录很准基本可以纸质阅读
+- Typeless 的 Whisper 模式，办公场景厌倦了打字可以直接对着电脑口喷输入，轻声的时候 ASR 也很准，最喜欢的是会自动 bullet point 的整理出来，更有书面感，更正式，不会潦草
+- Exa.ai 可以抓 Linkedin 的数据，想认识某个 background 的人，只要输入“xx 公司 xz 岗位之前做过 xx 方向”就能一次性输出 50 个 Linkedin 链接给我
+- Grok 当 X 爬虫用，Gemini 当 Reddit 爬虫用
+- Manus / Cursor 没找到使用场景最近打算重新用起来
+
+还有什么大家觉得好用的 AI 产品吗？
+        """
+    },
+    {
         "title": "第三篇：我的人生故事",
         "date": "2026-01-30",
         "summary": "这是第三篇的简介...",
