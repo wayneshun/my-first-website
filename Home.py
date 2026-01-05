@@ -25,6 +25,9 @@ with st.sidebar:
     st.write("📧 **微信**:")
     st.code("wayneshun", language="text")  # 使用代码框方便复制
 
+    st.write("📧 **Linkedin**:")
+    st.code("https://www.linkedin.com/in/%E5%8D%AB%E6%A0%8B-%E8%AE%B8-3981031b", language="text")  # 使用代码框方便复制
+
     st.write("📍 **职业**:")
     st.write("CONSTRUCT 战略负责人")
 
